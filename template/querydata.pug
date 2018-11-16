@@ -1,0 +1,544 @@
+extends layout
+
+block content
+	include lib/header
+	.n-detail(style='padding-bottom:0px')
+		.container
+			ul.bread.clearfix
+		.container.bg-white.padding-big
+			#credit.selector
+				.div
+					#qbb.active(data-name='isNovice', data-value='0') 全部借款标
+					div
+						a(href='/borrowlist/getPageNew.html') 新手标
+					#sjb(data-name='isNovice', data-value='2')
+						a(href='javascript:void(0)') 手机标
+				.clear
+				dl
+					dt 标的类型
+					dd.active(data-name='borrowType', data-value='0')
+						a(href='javascript:void(0)') 不限
+					dd(data-name='borrowType', data-value='1')
+						a(href='javascript:void(0)') 抵押标
+					dd(data-name='borrowType', data-value='2')
+						a(href='javascript:void(0)') 担保标
+					dd(data-name='borrowType', data-value='3')
+						a(href='javascript:void(0)') 净值标
+					dd(data-name='borrowType', data-value='4')
+						a(href='javascript:void(0)') 质押标
+					dd(data-name='borrowType', data-value='8')
+						a(href='javascript:void(0)') 车贷(抵)
+					dd(data-name='borrowType', data-value='9')
+						a(href='javascript:void(0)') 车贷(质)
+				dl
+					dt 借款期限
+					dd.active(data-name='timeLimitStr', data-value='')
+						a(href='javascript:void(0)') 不限
+					dd(data-name='timeLimitStr', data-value='isDay')
+						a(href='javascript:void(0)') 天标
+					dd(data-name='timeLimitStr', data-value='1,3')
+						a(href='javascript:void(0)') 1-3个月
+					dd(data-name='timeLimitStr', data-value='4,6')
+						a(href='javascript:void(0)') 4-6个月
+					dd(data-name='timeLimitStr', data-value='7,12')
+						a(href='javascript:void(0)') 7-12个月
+					dd(data-name='timeLimitStr', data-value='13')
+						a(href='javascript:void(0)') 12个月以上
+				dl
+					dt 年化利率
+					dd.active(data-name='rateStr', data-value='')
+						a(href='javascript:void(0)') 不限
+					dd(data-name='rateStr', data-value='0,10')
+						a(href='javascript:void(0)') 0-10%
+					dd(data-name='rateStr', data-value='10,15')
+						a(href='javascript:void(0)') 10%-15%
+					dd(data-name='rateStr', data-value='15,20')
+						a(href='javascript:void(0)') 15%-20%
+					dd(data-name='rateStr', data-value='20')
+						a(href='javascript:void(0)') 20%
+				dl
+					dt 完成进度
+					dd.active(data-name='borrowStatusStr', data-value='1,8')
+						a(href='javascript:void(0)') 不限
+					dd(data-name='borrowStatusStr', data-value='1,1')
+						a(href='javascript:void(0)') 招标中
+					dd(data-name='borrowStatusStr', data-value='6,7')
+						a(href='javascript:void(0)') 还款中
+					dd(data-name='borrowStatusStr', data-value='8,8')
+						a(href='javascript:void(0)') 已完成
+			.faq
+				.strong 常见问题
+				ul
+					li
+						a(href='/about_question.html?flag=7') 如何在网站注册？
+					li
+						a(href='/about_question.html?flag=2') 密码忘记了怎么办？
+					li
+						a(href='/about_question.html?flag=4') 电子合同有效吗？
+					li
+						a(href='/about_question.html?flag=6') 如何申请开通网上银行?
+					li
+						a(href='/about_question.html?flag=3') 投资过程会产生哪些费用？
+		.container.bg-white
+			#b_i.n-listdetail
+				ul.clearfix.list.list-title
+					li.title
+						span 借款标题
+					li.attribute
+						span 借款金额
+						span 年化利率
+						span 借款期限
+						span 还款方式
+					li.status 进度
+					li
+				ul.list.clearfix.listbg
+					li.title
+						img.icon(src='/public/images/querydata/icon-2.png')
+						a(title='品牌服装周转款10', href='/borrow/tender.html?id=f8cbb0230567430c8916333239198f39')
+							| 品牌服装周转款10
+					li.attribute
+						p(style='position:absolute;z-index:11;margin-top:-37px;margin-left: 247px;')
+							img(src='/public/images/querydata/n_money_coupon.png')
+						em |
+						span
+							b.m 100.00
+							|  万
+						em |
+						span
+							b 15
+							|  %
+						em |
+						span
+							b 12
+							| 							个月
+						em |
+						span.ms  按月付息到期还本 
+						em |
+					li.status
+						span.progress(style='background-position:-0px 0px;') 0.1%
+						em |
+						span
+							a.button.bg-sub(countdown='143', borrowid='f8cbb0230567430c8916333239198f39', href='https://www.zhaoshangdai.com/borrow/tender.html?id=f8cbb0230567430c8916333239198f39') 立即投资
+				ul.list.clearfix
+					li.title
+						img.icon(src='/public/images/querydata/icon-2.png')
+						a(title='机械设备公司流动资金周转（增加贷款）4', href='/borrow/tender.html?id=d9cf38f4f7584f88a3cd3b0159f52440')
+							| 机械设备公司流动资金周转（增加贷…
+					li.attribute
+						p(style='position:absolute;z-index:11;margin-top:-37px;margin-left: 247px;')
+							img(src='/public/images/querydata/n_money_coupon.png')
+						em |
+						span
+							b.m 100.00
+							|  万
+						em |
+						span
+							b 12.6
+							|  %
+						em |
+						span
+							b 3
+							| 							个月
+						em |
+						span.ms  按月等额还本付息 
+						em |
+					li.status
+						span.progress3(style='background-position:-5600px 0px;') 100%
+						em |
+						span
+							a.button.bg-blue(href='/borrow/tender.html?id=d9cf38f4f7584f88a3cd3b0159f52440') 还款中
+				ul.list.clearfix.listbg
+					li.title
+						img.icon(src='/public/images/querydata/icon-4.png')
+						a(title='物流公司资金周转4', href='/borrow/tender.html?id=ef64b0a6be1a4c0987287b667a3408a8')
+							| 物流公司资金周转4
+					li.attribute
+						p(style='position:absolute;z-index:11;margin-top:-37px;margin-left: 247px;')
+							img(src='/public/images/querydata/n_money_coupon.png')
+						em |
+						span
+							b.m 76.00
+							|  万
+						em |
+						span
+							b 15
+							|  %
+						em |
+						span
+							b 6
+							| 							个月
+						em |
+						span.ms  按月等额还本付息 
+						em |
+					li.status
+						span.progress3(style='background-position:-5600px 0px;') 100%
+						em |
+						span
+							a.button.bg-blue(href='/borrow/tender.html?id=ef64b0a6be1a4c0987287b667a3408a8') 还款中
+				ul.list.clearfix
+					li.title
+						img.icon(src='/public/images/querydata/icon-2.png')
+						a(title='品牌服装周转款9', href='/borrow/tender.html?id=4d4da7c4b6384a04a2e247aa7ef1285b')
+							| 品牌服装周转款9
+					li.attribute
+						p(style='position:absolute;z-index:11;margin-top:-37px;margin-left: 247px;')
+							img(src='/public/images/querydata/n_money_coupon.png')
+						em |
+						span
+							b.m 100.00
+							|  万
+						em |
+						span
+							b 15
+							|  %
+						em |
+						span
+							b 12
+							| 							个月
+						em |
+						span.ms  按月付息到期还本 
+						em |
+					li.status
+						span.progress3(style='background-position:-5600px 0px;') 100%
+						em |
+						span
+							a.button.bg-blue(href='/borrow/tender.html?id=4d4da7c4b6384a04a2e247aa7ef1285b') 还款中
+				ul.list.clearfix.listbg
+					li.title
+						img.icon(src='/public/images/querydata/icon-2.png')
+						a(title='机械设备公司流动资金周转（增加贷款）3', href='/borrow/tender.html?id=a518059bf9e949a6a1df62f210d34ff3')
+							| 机械设备公司流动资金周转（增加贷…
+					li.attribute
+						p(style='position:absolute;z-index:11;margin-top:-37px;margin-left: 247px;')
+							img(src='/public/images/querydata/n_money_coupon.png')
+						em |
+						span
+							b.m 100.00
+							|  万
+						em |
+						span
+							b 12.6
+							|  %
+						em |
+						span
+							b 3
+							| 							个月
+						em |
+						span.ms  按月等额还本付息 
+						em |
+					li.status
+						span.progress3(style='background-position:-5600px 0px;') 100%
+						em |
+						span
+							a.button.bg-blue(href='/borrow/tender.html?id=a518059bf9e949a6a1df62f210d34ff3') 还款中
+				ul.list.clearfix
+					li.title
+						img.icon(src='/public/images/querydata/icon-2.png')
+						a(title='品牌服装周转款8', href='/borrow/tender.html?id=34d4081caf694ab3acfcdc0fa6534d5f')
+							| 品牌服装周转款8
+					li.attribute
+						p(style='position:absolute;z-index:11;margin-top:-37px;margin-left: 247px;')
+							img(src='/public/images/querydata/n_money_coupon.png')
+						em |
+						span
+							b.m 100.00
+							|  万
+						em |
+						span
+							b 15
+							|  %
+						em |
+						span
+							b 12
+							| 							个月
+						em |
+						span.ms  按月付息到期还本 
+						em |
+					li.status
+						span.progress3(style='background-position:-5600px 0px;') 100%
+						em |
+						span
+							a.button.bg-blue(href='/borrow/tender.html?id=34d4081caf694ab3acfcdc0fa6534d5f') 还款中
+				ul.list.clearfix.listbg
+					li.title
+						img.icon(src='/public/images/querydata/icon-2.png')
+						a(title='工程建设资金周转【增加借款】2', href='/borrow/tender.html?id=f0d35055558249a5887a978a94f23002')
+							| 工程建设资金周转【增加借款】2
+					li.attribute
+						p(style='position:absolute;z-index:11;margin-top:-37px;margin-left: 247px;')
+							img(src='/public/images/querydata/n_money_coupon.png')
+						em |
+						span
+							b.m 113.00
+							|  万
+						em |
+						span
+							b 15
+							|  %
+						em |
+						span
+							b 6
+							| 							个月
+						em |
+						span.ms  按月等额还本付息 
+						em |
+					li.status
+						span.progress3(style='background-position:-5600px 0px;') 100%
+						em |
+						span
+							a.button.bg-blue(href='/borrow/tender.html?id=f0d35055558249a5887a978a94f23002') 还款中
+				ul.list.clearfix
+					li.title
+						img.icon(src='/public/images/querydata/icon-4.png')
+						a(title='家具商经营周转款4', href='/borrow/tender.html?id=d4fd695d2eeb4ed380af2e41f13ddd3a')
+							| 家具商经营周转款4
+					li.attribute
+						p(style='position:absolute;z-index:11;margin-top:-37px;margin-left: 247px;')
+							img(src='/public/images/querydata/n_money_coupon.png')
+						em |
+						span
+							b.m 87.00
+							|  万
+						em |
+						span
+							b 12.6
+							|  %
+						em |
+						span
+							b 3
+							| 							个月
+						em |
+						span.ms  按月等额还本付息 
+						em |
+					li.status
+						span.progress3(style='background-position:-5600px 0px;') 100%
+						em |
+						span
+							a.button.bg-blue(href='/borrow/tender.html?id=d4fd695d2eeb4ed380af2e41f13ddd3a') 还款中
+				ul.list.clearfix.listbg
+					li.title
+						img.icon(src='/public/images/querydata/icon-2.png')
+						a(title='旧城区改造款4', href='/borrow/tender.html?id=74c19fd28ec0460f807151d50b6ea0d4')
+							| 旧城区改造款4
+					li.attribute
+						p(style='position:absolute;z-index:11;margin-top:-37px;margin-left: 247px;')
+							img(src='/public/images/querydata/n_money_coupon.png')
+						em |
+						span
+							b.m 85.00
+							|  万
+						em |
+						span
+							b 12.6
+							|  %
+						em |
+						span
+							b 3
+							| 							个月
+						em |
+						span.ms  按月等额还本付息 
+						em |
+					li.status
+						span.progress3(style='background-position:-5600px 0px;') 100%
+						em |
+						span
+							a.button.bg-blue(href='/borrow/tender.html?id=74c19fd28ec0460f807151d50b6ea0d4') 还款中
+				ul.list.clearfix
+					li.title
+						img.icon(src='/public/images/querydata/icon-4.png')
+						a(title='水泥公司流动资金周转（增加贷款）11', href='/borrow/tender.html?id=61d258a61af34ef990a9d9bfaa306207')
+							| 水泥公司流动资金周转（增加贷款）…
+					li.attribute
+						p(style='position:absolute;z-index:11;margin-top:-37px;margin-left: 247px;')
+							img(src='/public/images/querydata/n_money_coupon.png')
+						em |
+						span
+							b.m 140.00
+							|  万
+						em |
+						span
+							b 15
+							|  %
+						em |
+						span
+							b 6
+							| 							个月
+						em |
+						span.ms  按月等额还本付息 
+						em |
+					li.status
+						span.progress3(style='background-position:-5600px 0px;') 100%
+						em |
+						span
+							a.button.bg-blue(href='/borrow/tender.html?id=61d258a61af34ef990a9d9bfaa306207') 还款中
+				ul.list.clearfix.listbg
+					li.title
+						img.icon(src='/public/images/querydata/icon-2.png')
+						a(title='品牌服装资金转款【增加贷款】7', href='/borrow/tender.html?id=d255f8bd3dec4342850def2d1a20b016')
+							| 品牌服装资金转款【增加贷款】7
+					li.attribute
+						p(style='position:absolute;z-index:11;margin-top:-37px;margin-left: 247px;')
+							img(src='/public/images/querydata/n_money_coupon.png')
+						em |
+						span
+							b.m 42.00
+							|  万
+						em |
+						span
+							b 12.6
+							|  %
+						em |
+						span
+							b 3
+							| 							个月
+						em |
+						span.ms  按月等额还本付息 
+						em |
+					li.status
+						span.progress3(style='background-position:-5600px 0px;') 100%
+						em |
+						span
+							a.button.bg-blue(href='/borrow/tender.html?id=d255f8bd3dec4342850def2d1a20b016') 还款中
+				ul.list.clearfix
+					li.title
+						img.icon(src='/public/images/querydata/icon-2.png')
+						a(title='品牌女装进货款5', href='/borrow/tender.html?id=900a1b4d1d7948d0ae3df8f04a024b13')
+							| 品牌女装进货款5
+					li.attribute
+						p(style='position:absolute;z-index:11;margin-top:-37px;margin-left: 247px;')
+							img(src='/public/images/querydata/n_money_coupon.png')
+						em |
+						span
+							b.m 45.00
+							|  万
+						em |
+						span
+							b 11
+							|  %
+						em |
+						span
+							b 2
+							| 							个月
+						em |
+						span.ms  按月等额还本付息 
+						em |
+					li.status
+						span.progress3(style='background-position:-5600px 0px;') 100%
+						em |
+						span
+							a.button.bg-blue(href='/borrow/tender.html?id=900a1b4d1d7948d0ae3df8f04a024b13') 还款中
+				ul.list.clearfix.listbg
+					li.title
+						img.icon(src='/public/images/querydata/icon-1.png')
+						a(title='建材公司短期周转款3', href='/borrow/tender.html?id=d26a17b35dd74d80944091adae713139')
+							| 建材公司短期周转款3
+					li.attribute
+						p(style='position:absolute;z-index:11;margin-top:-37px;margin-left: 247px;')
+							img(src='/public/images/querydata/n_money_coupon.png')
+						em |
+						span
+							b.m 100.00
+							|  万
+						em |
+						span
+							b 15
+							|  %
+						em |
+						span
+							b 6
+							| 							个月
+						em |
+						span.ms  按月等额还本付息 
+						em |
+					li.status
+						span.progress3(style='background-position:-5600px 0px;') 100%
+						em |
+						span
+							a.button.bg-blue(href='/borrow/tender.html?id=d26a17b35dd74d80944091adae713139') 还款中
+				ul.list.clearfix
+					li.title
+						img.icon(src='/public/images/querydata/icon-4.png')
+						a(title='家具商经营周转款3', href='/borrow/tender.html?id=fe551e5a261e4950a51be4bb474ac09d')
+							| 家具商经营周转款3
+					li.attribute
+						p(style='position:absolute;z-index:11;margin-top:-37px;margin-left: 247px;')
+							img(src='/public/images/querydata/n_money_coupon.png')
+						em |
+						span
+							b.m 80.00
+							|  万
+						em |
+						span
+							b 12.6
+							|  %
+						em |
+						span
+							b 3
+							| 							个月
+						em |
+						span.ms  按月等额还本付息 
+						em |
+					li.status
+						span.progress3(style='background-position:-5600px 0px;') 100%
+						em |
+						span
+							a.button.bg-blue(href='/borrow/tender.html?id=fe551e5a261e4950a51be4bb474ac09d') 还款中
+				ul.list.clearfix.listbg
+					li.title
+						img.icon(src='/public/images/querydata/icon-2.png')
+						a(title='工程建设资金周转（增加借款）1', href='/borrow/tender.html?id=9df9b71addbe4d19b694a0c7b32431d8')
+							| 工程建设资金周转（增加借款）1
+					li.attribute
+						p(style='position:absolute;z-index:11;margin-top:-37px;margin-left: 247px;')
+							img(src='/public/images/querydata/n_money_coupon.png')
+						em |
+						span
+							b.m 67.00
+							|  万
+						em |
+						span
+							b 15
+							|  %
+						em |
+						span
+							b 6
+							| 							个月
+						em |
+						span.ms  按月等额还本付息 
+						em |
+					li.status
+						span.progress3(style='background-position:-5600px 0px;') 100%
+						em |
+						span
+							a.button.bg-blue(href='/borrow/tender.html?id=9df9b71addbe4d19b694a0c7b32431d8') 还款中
+				br
+				.pagination(style='margin:0 0 0 0')
+					ul#paginationBidList.m_page2
+						li.prePage
+							span
+						li.disable
+							a(href='javascript:void(0)') 上一页
+						li.active
+							a(href='javascript:void(0)') 1
+						li
+							a(onclick="loadBidList('0','1,8' ,'' ,'' ,0, 2 ,15)", href='javascript:void(0)') 2
+						li
+							a(onclick="loadBidList('0','1,8' ,'' ,'' ,0, 3 ,15)", href='javascript:void(0)') 3
+						li
+							a(onclick="loadBidList('0','1,8' ,'' ,'' ,0, 4 ,15)", href='javascript:void(0)') 4
+						li
+							a(onclick="loadBidList('0','1,8' ,'' ,'' ,0, 5 ,15)", href='javascript:void(0)') 5
+						li
+							a(onclick="loadBidList('0','1,8' ,'' ,'' ,0, 6 ,15)", href='javascript:void(0)') 6
+						li
+							a(onclick="loadBidList('0','1,8' ,'' ,'' ,0, 7 ,15)", href='javascript:void(0)') 7
+						li
+							a(onclick="loadBidList('0','1,8' ,'' ,'' ,0, 8 ,15)", href='javascript:void(0)') 8
+						li
+							a(onclick="loadBidList('0','1,8' ,'' ,'' ,0, 9 ,15)", href='javascript:void(0)') 9
+						li
+							a(onclick="loadBidList('0','1,8' ,'' ,'' ,0, 10 ,15)", href='javascript:void(0)') 10
+						li.more ...
+						li.nextPage  
+						li
+							a(onclick="loadBidList('0','1,8' ,'' ,'' ,0, 2 ,15)", href='javascript:void(0)') 下一页
